@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NCERT MATH QUESTION GENERATOR</title>
+    <style>
+        /* Center-align text */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: monospace;
+        }
+
+        /* Style for the ASCII art */
+        pre {
+            text-align: center;
+            background-color: lightgray;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 24px; /* Adjust font size as needed */
+            margin: 0 auto; /* Center-align the ASCII art menu */
+            width: fit-content; /* Adjust width to content size */
+            white-space: pre-line; /* Allow line breaks */
+        }
+
+        /* Style for the title */
+        h1 {
+            font-size: 36px; /* Adjust font size as needed */
+            text-align: center; /* Center-align the title */
+        }
+		/* Style for the home page button */
+        .home-btn {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 10px; /* Adjust margin as needed */
+            text-decoration: none; /* Remove default link underline */
+        }
+
+        /* Hover effect for the button */
+        .home-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>SOLVING PRACTICE</h1>
+        <pre>
+            <!-- ASCII art menu -->
+            <!-- Replace with your ASCII art -->
+            ---------------------
+            |   SCORE = {{ practice_score }}   |
+            ---------------------
+            <a href="/quadratics"> 1.QUADRATIC EQUATIONS </a> 
+            <a href="/linears"> 2.LINEAR EQUATIONS </a>
+            -----------------
+			<a href="/" class="home-btn">Home</a> <!-- Home button -->
+        </pre>
+    </div>
+	<script>
+	function callFlaskFunction() {
+	  // Generate a random number to add as a query parameter
+	  const randomNumber = Math.floor(Math.random() * 1000000);
+	  const url = '/reset_counters_only' + '?random=' + randomNumber;
+
+	  // Make an AJAX request to Flask route with the random query parameter
+	  fetch(url, {
+		method: 'GET',
+		headers: {
+		  'Content-Type': 'application/json'
+		}
+	  })
+	  .then(response => response.json())
+	  .then(data => {
+		// Handle the response from Flask function
+		console.log('Response from Flask function:', data);
+		// You can perform other actions here with the response data
+	  })
+	  .catch(error => {
+		console.error('Error:', error);
+	  });
+	}
+
+	// Function to call Flask function when the page is shown
+	function onPageShow() {
+	  callFlaskFunction();
+	}
+
+	// Event listener for pageshow event
+	window.addEventListener('pageshow', onPageShow);
+	</script>
+</body>
+</html>

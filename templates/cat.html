@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celebratory Cat</title>
+    <style>
+        /* Center-align the image and button */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Make the image fit the screen */
+        img {
+            max-width: 100%;
+            max-height: 80vh; /* Adjust height as needed */
+        }
+
+        /* Style for the button */
+        .my-button {
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px; /* Adjust top margin as needed */
+        }
+
+        /* Hover effect for the button */
+        .my-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+	<h2>Congrats on reaching 100 points!</h2>
+    <img src="https://gifdb.com/images/high/happy-celebration-cat-yay-50cv51lv3s425ax6.webp" alt="Happy Cat Image">
+    <button type="submit" class="my-button" id = "back" >Back</button>
+	<script>
+		document.getElementById('back').addEventListener('click', function() {
+			window.location.href = '/page2'; // Replace '/change_subject' with your Flask route
+		});
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Page</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .question-box {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-align: left;
+        }
+        .question {
+            font-size: 20px;
+            margin: 0;
+        }
+        .score {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .input-container input[type="text"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        .submit-btn {
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+  	
+    	.output-box {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            min-height: 50px;
+            text-align: center; /* Center-align text */
+    	}
+
+	.output-text {
+            margin: 0; /* Remove default margin for <p> tag */
+            display: inline-block; /* Make the text centered */
+    	}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="score">
+            <p>Score: {{ score }}</p>
+        </div>
+        <div class="question-box">
+            <p class="question">{{ question }}</p>
+        </div>
+	    <div class="input-container">
+			<form autocomplete="off" id = quiz-form action = "chapter12", method = "POST">
+			    <input autocomplete="off" type="text" id="user-answer" name="user_answer" placeholder="Enter your answer">
+				<button type="submit" class="submit-btn">Submit</button>
+				<button type="button" class="submit-btn" id="change-subject-btn">Change subject</button>			
+			</form>
+		</div>
+        <div class="output-box">
+            <p class = "output-text">{{ output }}</p>
+        </div>
+    </div>
+	<script> 
+		document.getElementById('change-subject-btn').addEventListener('click', function() {
+			window.location.href = '/page1'; // Replace '/change_subject' with your Flask route
+		});  
+	</script>
+</body>
+</html>

@@ -31,7 +31,7 @@ OR
  
 1. Run the Flask server:
    ```bash
-   python Server.py
+   python CBSEClass10.py
    ```
 2. Open your web browser and navigate to `http://127.0.0.1:5000/`.
 3. Use the interface to explore the tools and resources available.

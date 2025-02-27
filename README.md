@@ -7,8 +7,6 @@ Welcome to the CBSE Question Generator! This project is designed to help generat
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 - Generate math practice questions for various topics covered in the CBSE curriculum.
@@ -16,7 +14,7 @@ Welcome to the CBSE Question Generator! This project is designed to help generat
 - Easy-to-use interface.
 
 ## Installation
-To run this project locally, follow these steps:
+To install this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
@@ -26,16 +24,17 @@ To run this project locally, follow these steps:
    ```bash
    cd cbse-question-generator
    ```
-3. Open `index.html` in your preferred web browser.
-
 ## Usage
 Feel free to use this demo site: https://cbse-question-generator.onrender.com/
 
 OR
  
-1. Open the `index.html` file in your browser.
-2. Select the desired topic and difficulty level.
-3. Click "Generate" to create a new set of practice questions.
+1. Run the Flask server:
+   ```bash
+   python Server.py
+   ```
+2. Open your web browser and navigate to `http://127.0.0.1:5000/`.
+3. Use the interface to explore the tools and resources available.
 
 ## Contributing
 
